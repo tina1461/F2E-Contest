@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Nine week F2E Contest by Xristina",
   "author": "tina1461 <tina8243@gmail.com>",
+  "homepage": "https://github.com/tina1461/F2E-Contest",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -15,7 +16,10 @@
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
-    "iview": "^2.14.2",
+    "element-ui": "^2.4.1",
+    "pug": "^2.0.3",
+    "pug-filters": "^3.1.0",
+    "pug-loader": "^2.4.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -100,6 +104,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "wst": "/dist/"
+  ]
 }

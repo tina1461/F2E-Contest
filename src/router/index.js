@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home.vue'
 import toDoList from '@/pages/todolist/index.vue'
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
+import filters from '@/pages/filters/index.vue'
+
 
 Vue.use(Router)
-Vue.use(iView);
+
 
 export default new Router({
   // mode: 'history',//remove hashtag '/#'
@@ -20,6 +20,11 @@ export default new Router({
       path: '/todolist',
       name: 'toDoList',
       component: toDoList
+    },
+    {
+      path: '/filter',
+      name: 'filters',
+      component: filters
     }
   ],//setting 路徑及對應檔案
 })

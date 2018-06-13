@@ -1,0 +1,40 @@
+@import 'variable';
+@import '../../mixins';
+.header-wrapper{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background-color: $header-bg;
+    @include rwd_down($miblie-width){
+        flex-direction: column;
+        justify-content: center;
+    }
+    .logo{
+        flex:1;
+
+    }
+    .searchBar{
+        flex:2;
+        @include rwd_down($miblie-width){
+            margin-top: 10px;
+            width: 100%;
+        }
+        .search-input{
+            i{
+                color: $white;
+                font-size: 20px;
+            }
+            input{
+                padding-left: 40px;
+                border:none;
+                border-bottom: 1px solid $white;
+                background-color: $header-bg;
+                color: $white;
+                border-radius: 0;
+                
+            }
+            @include outline();
+            @include placeholder(italic);
+        }
+    }
+}

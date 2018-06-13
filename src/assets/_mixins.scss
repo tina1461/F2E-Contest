@@ -1,0 +1,41 @@
+// 自訂解析度 以下解析度
+@mixin rwd_down($media){
+	@media only screen and (max-width: $media + 'px') {
+		@content;
+	}
+}
+
+// 自訂解析度 以上解析度
+@mixin rwd_up($media){
+	@media only screen and (min-width: $media + 'px') {
+		@content;
+	}
+}
+
+// 自訂解析度區間解析度 rwd(768,1080)
+@mixin rwd_range($min,$max){
+	@media only screen and (min-width: $min + 'px') and (max-width: $max + 'px') {
+		@content;
+	}
+}
+
+@mixin outline(){
+	&:focus,&:active,&:hover{
+		outline: none;
+	}
+}
+
+@mixin placeholder($style){
+		::-webkit-input-placeholder {
+	font-style: $style;
+	}
+	:-moz-placeholder {
+	font-style: $style;  
+	}
+	::-moz-placeholder {
+	font-style: $style;  
+	}
+	:-ms-input-placeholder {  
+	font-style: $style; 
+	}
+}
