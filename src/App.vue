@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss" >
 @import "@/assets/normalize.scss";
+@import "@/assets/home.scss";
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

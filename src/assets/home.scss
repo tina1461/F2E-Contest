@@ -1,0 +1,83 @@
+.page-wrapper{
+  width: 100%;
+  overflow: hidden;
+  .page-title{
+      margin: 0;
+      padding: 16px;
+      color: #6ae4dc;
+      border-bottom: 2px solid #6ae4dc;
+  }
+  .page-content{
+    width: 100%;
+    height: 90vh;
+    overflow-y: scroll;
+    .contest-list{
+        margin: 0 auto;
+        padding: 10px;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media screen and (max-width: 991px){
+            width: 100%;
+        }
+        .contest-list-item-wrapper{
+            width: 50%;
+            height: 250px;
+            padding: 16px;
+             @media screen and (max-width: 991px){
+                 width: 100%;
+             }
+            .contest-list-item{
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                position: relative;
+                border-radius: 6px;
+                box-shadow: 1px 3px 6px #989898;
+                &:hover{
+                    box-shadow: 1px 5px 10px #989898;
+                    .contest-time{
+                        filter:brightness(1.1);
+                        
+                    }
+                    .contest-subject{
+                        transform: scale(1.5);
+                        font-weight: 900;
+                    }
+                }
+                .contest-time{
+                    padding: 8px 16px;
+                    width: 100%;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    background-color: rgb(106, 228, 220);
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-weight: 700;
+                    border-radius: 6px 6px 0px 0px;
+                    text-transform:uppercase;
+                }
+                .contest-subject{
+                    height: calc(100% - 32px);
+                    position: relative;
+                    top: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 20px;
+                    font-weight: 700;
+                    >a{
+                        text-decoration: none;
+                        color: #989898;
+                    }
+                }
+            }
+        }
+      
+    }
+  }
+
+}

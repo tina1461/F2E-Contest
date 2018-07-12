@@ -1,0 +1,324 @@
+@import 'variable';
+@import 'mixin';
+@import 'extend';
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: $fontFamily-base;
+    
+}
+.page{
+    margin: 0 auto;
+    padding: 32px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .page-wrapper{
+        width: 100%;
+        height: 100%;
+        @include gridTemplate ('col',8, 120px);
+        @include gridTemplate ('row',20, 100px);
+        // display: grid;
+        // grid-template-columns: repeat(8, minmax( 100% / 8 , max-content));
+        // grid-template-rows: repeat(20, minmax( 100px , max-content))
+        overflow: scroll;
+    }
+}
+
+.top{
+    @include grid(1,2,1,9);
+    text-align: center;
+}
+.logo{
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: $fontSize-logo;
+    background-color: $black;
+    color: $white;
+    font-weight: 900;
+}
+.product-category{
+    font-size: $fontSize-title1;
+    color: $black;
+    font-weight: 900;
+}
+
+.item-list{
+    @include grid(2,20,1,9);
+    @include gridTemplate ('col',8, 120px);
+    @include gridTemplate ('row',20, 100px);
+    // justify-content: flex-start;
+    .item{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .item-border{
+            border: 20px solid $color-primary;
+            z-index: 1;
+        }
+        .item-img{
+            background-color:  #D7D7D7;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            z-index: 4;
+        }
+        .item-name{
+            position: relative;
+            font-family: $fontFamily-base;
+            font-size: $fontSize-title2;
+            font-weight: 900;
+            color: black;
+            z-index: 7;
+            &::before{
+                position: absolute;
+                left: 0;
+                top: -18px;
+                width: 100%;
+                height: 24px;
+                content: attr(data-content);
+                color: $black10;
+                overflow: hidden;
+            }
+            &::after{
+                position: absolute;
+                left: 0;
+                top: -12px;
+                width: 100%;
+                height: 30px;
+                content: attr(data-content);
+                color: $black30;
+                overflow: hidden;
+            }
+        }
+        .item-num{
+            font-family: $fontFamily-base;
+            font-size: $fontSize-title2;
+            font-weight: 900;
+            color: #000000;
+            z-index: 7;
+        }
+        .item-cate{
+            font-family: $fontFamily-base;
+            font-size: $fontSize-title3;
+            font-weight: 700;
+            font-style: italic;
+            color: black;
+            z-index: 7;
+        }
+        .item-pattern{
+            background-image: url('https://hexschool.github.io/THE_F2E_Design/week4-product%20gallery/assets/pattern%20unit@2x.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: repeat;
+            object-fit: cover;
+            z-index: 6;
+        }
+        .item-box{
+            background-color: $tiffanyGreen;
+            z-index: 3;
+        }
+        &.item-1{
+            @include grid(1,6,1,6);
+            @include gridTemplate('col', 5, 120px);
+            @include gridTemplate('row', 6, 100px);
+            .item-border{
+                @include grid(1,3,3,5);
+                transform: translate(60px,50px);
+            }
+            .item-img{
+                @include grid(2,6,1,5);
+            }
+            .item-name{
+                @include grid(1,2,1,4);
+                transform: translate(-19%,75%);
+            }
+            .item-num{
+                @include grid(6,7,1,2);
+                transform: translate(-25%,0);
+            }
+            .item-cate{
+                @include grid(5,6,4,6);
+                transform: rotate(90deg) translate(5%,25%);
+            }
+            .item-pattern{
+                @include grid(5,6,1,3);
+                transform: translate(25%,50%);
+            }
+
+        }
+        &.item-2{
+            @include grid(1,5,6,9);
+            @include gridTemplate('col', 3, 120px);
+            @include gridTemplate('row', 5, 100px);
+            .item-border{
+                @include grid(2,4,2,4);
+            }
+            .item-img{
+                @include grid(3,5,1,3);
+            }
+            .item-name{
+                @include grid(5,6,2,4);
+                transform: translate(-24%,25%);
+            }
+            .item-num{
+                @include grid(2,3,3,4);
+                transform: translate(25%,0%);
+            }
+            .item-cate{
+                @include grid(2,3,1,3);
+                transform: translate(0%,75%);
+                text-align: left;
+            }
+            .item-box{
+                @include grid(2,4,1,3);
+                transform: translate(25%,25%);
+            }
+        }
+        &.item-3{
+            @include grid(6,10,1,6);
+            @include gridTemplate('col', 5, 120px);
+            @include gridTemplate('row', 4, 100px);
+            .item-border{
+                @include grid(2,4,3,5);
+                transform: translate(25%,25%);
+            }
+            .item-img{
+                @include grid(2,4,1,5);
+            }
+            .item-name{
+                @include grid(1,2,2,5);
+                transform: translate(-10%,45%);
+            }
+            .item-num{
+                @include grid(4,5,5,6);
+                transform: translate(-25%,0%);
+            }
+            .item-cate{
+                @include grid(4,5,1,3);
+                transform: translate(0%,0%);
+            }
+            .item-box{
+                @include grid(1,3,1,3);
+                transform: translate(0%,25%);
+            }
+        }
+        &.item-4{
+            @include grid(5,12,6,9);
+            @include gridTemplate('col', 3, 120px);
+            @include gridTemplate('row', 7, 100px);
+            .item-border{
+                @include grid(2,4,1,3);
+                transform: translate(25%,0);
+            }
+            .item-img{
+                @include grid(3,7,2,4);
+            }
+            .item-name{
+                @include grid(3,4,1,3);
+                transform: rotate(-90deg) translate(0%,-25%) ; 
+            }
+            .item-num{
+                @include grid(6,7,1,2);
+                transform: translate(25%,50%);
+            }
+            .item-cate{
+                @include grid(2,3,2,4);
+                transform: rotate(90deg) translate(-15%,-25%);
+            }
+            .item-pattern{
+                @include grid(6,7,2,4);
+                transform: translate(0%,50%);
+            }
+        }
+        &.item-5{
+            @include grid(10,14,1,6);
+            @include gridTemplate('col', 5, 120px);
+            @include gridTemplate('row', 4, 100px);
+            .item-border{
+                @include grid(3,4,2,4);
+                transform: translate(0,50%);
+            }
+            .item-img{
+                @include grid(2,4,3,5);
+            }
+            .item-name{
+                @include grid(2,3,1,4);
+                transform: translate(0%,50%) ;
+            }
+            .item-num{
+                @include grid(3,4,2,3);
+                transform: translate(-25%,50%);
+            }
+            .item-cate{
+                @include grid(2,3,4,6);
+                transform: translate(-5%,0%);
+                text-align: right;
+            }
+            .item-pattern{
+                @include grid(1,2,1,3);
+                transform: translate(25%,50%);
+            }
+        }
+        &.item-6{
+            @include grid(12,18,4,9);
+            @include gridTemplate('col', 5, 120px);
+            @include gridTemplate('row', 6, 100px);
+            .item-border{
+                @include grid(4,6,2,6);
+                transform: translate(0,25%);
+            }
+            .item-img{
+                @include grid(2,6,2,6);
+            }
+            .item-name{
+                @include grid(1,2,3,6);
+                transform: translate(5%,50%) ;
+            }
+            .item-num{
+                @include grid(3,4,1,2);
+                transform: translate(25%,50%);
+            }
+            .item-cate{
+                @include grid(6,7,2,4);
+                transform: translate(50%,0%);
+            }
+            .item-box{
+                @include grid(4,6,1,3);
+                transform: translate(25%,0%);
+            }
+        }
+        &.item-7{
+            @include grid(14,19,1,4);
+            @include gridTemplate('col', 3, 120px);
+            @include gridTemplate('row', 5, 100px);
+            .item-border{
+                @include grid(1,5,1,3);
+                transform: translate(25%,12.5%);
+            }
+            .item-img{
+                @include grid(2,6,1,3);
+            }
+            .item-name{
+                @include grid(2,3,2,4);
+                transform: rotate(90deg) translate(10%,-25%) ;
+                
+            }
+            .item-num{
+                @include grid(5,6,3,4);
+                transform: translate(25%,50%);
+            }
+            .item-cate{
+                @include grid(1,2,1,3);
+                transform: translate(0%,75%);
+                text-align: left;
+            }
+            .item-box{
+                @include grid(4,6,2,4);
+                
+            }
+        }
+    }
+}

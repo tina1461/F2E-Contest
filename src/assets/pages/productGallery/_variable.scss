@@ -1,0 +1,30 @@
+/* Color */
+
+$black: #000000;
+$white: #FFFFFF;
+
+$black10: rgba(0,0,0,0.1);
+$black30: rgba(0,0,0,0.3);
+
+$tiffanyGreen: #50E3C2;
+
+$color-primary: $tiffanyGreen;
+
+
+/* FontSize */
+$fontSize-base: 20px;
+
+$fontSize-title1: ($fontSize-base * 1.2) * 3; 
+$fontSize-title2: ($fontSize-base * 1.2) * 2; 
+$fontSize-title3: $fontSize-base * 1.2;
+
+$fontSize-subtitle: $fontSize-base * 1.2;
+$fontSize-Paragraph: $fontSize-base * 0.8;
+$fontSize-logo: $fontSize-base;
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+$font-family-Roboto: 'Roboto','Avenir', Helvetica, Arial, sans-serif;
+$fontFamily-base: $font-family-Roboto;
+

@@ -1,0 +1,17 @@
+@mixin gridTemplate ($gridType,$item,$width) {
+    display:grid;
+    @if $gridType == 'row'{
+        grid-template-rows: repeat($item,minmax($width, 100% / $item));
+    }
+    @else if  $gridType == 'col'{
+        grid-template-columns: repeat($item,minmax($width, 100% / $item));
+    }
+    
+}
+@mixin grid($rowStart,$rowEnd,$colStart,$colEnd) {
+    grid-row-start: $rowStart ;
+    grid-row-end: $rowEnd;
+    grid-column-start: $colStart ;
+    grid-column-end: $colEnd;
+}
+
